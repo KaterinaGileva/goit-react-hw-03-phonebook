@@ -1,0 +1,30 @@
+.form {
+    padding: 20px;
+   width: 300px;
+   align-items: center;
+   font-size: 20px;
+   font-weight: 500;
+   border: 2px solid blue;
+}
+
+.name, .number {
+    display: inline-block;;
+    margin-bottom: 10px;
+    
+}
+
+.input {
+    display: flex;
+    margin-top: 10px;
+    font-size: 18px;
+    border: 2px solid gray;
+}
+
+.formBtn {
+    display: flex;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+ }

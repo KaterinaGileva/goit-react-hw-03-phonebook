@@ -1,0 +1,33 @@
+.list {
+   width: 330px;
+   list-style: circle ;
+   
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    
+    border: 1px solid blue;
+}
+
+.name {
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-weight: 500;
+    
+}
+
+.number {
+   margin-left: 10px;
+   color: blue;
+}
+
+.btn {
+    
+    font-weight: 600;
+    background-color: aqua;
+}
