@@ -4,14 +4,14 @@ import { ContactForm } from './components/ContactForm/ContactForm';
 //import { Formik, Field, Form } from "formik";
 //import * as yup from 'yup';
 
-import initialContacts from './contacts.json';
+//import initialContacts from './contacts.json';
 import { nanoid } from 'nanoid';
 
 import ContactList from 'components/ContactList';
 
 export class App extends Component {
   state = {
-    contacts: initialContacts,
+    contacts: [],
     filter: '',
   };
 
@@ -70,7 +70,32 @@ getVisibleContacts = () => {
     );
 };
 
+componentDidMount() {
+  console.log("App componentDidMount");
+
+  const contacts = localStorage.getItem('contacts');
+  const parsedContacts = JSON.parse(contacts);
+
+  if (parsedContacts) {
+  this.setState({ contacts: parsedContacts});
+}
+}
+
+componentDidUpdate (prevProps, prevState) {
+  console.log("App componentDidUpdate");
+  
+  if(this.state.contacts !== prevState.contacts){
+    console.log('обновилось поле контактов');
+// текущие контакты приводим к строке и записываем в локальное хранилище
+//при каждом обновлении контактов ,приводим к строке и
+// целиком перезаписывается массив локального хранилища
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+}
+
+
   render() {
+    console.log("App render");
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
 
