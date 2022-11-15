@@ -15,26 +15,7 @@ export class App extends Component {
     filter: '',
   };
 
- // addContact = ({name, number})=> {
- //     console.log('name', name);
- //     console.log('#', number);
- //     console.log('fg', this.state.contacts);
- //     console.log('con', contact);
-  //    const contact = {
-  //        id: nanoid(),
-  //       name,
-  //       number  
-  //    };
-
-  //    console.log('con', contacts);
-  //    if (contact === this.state.contacts) {
-  //      alert(`${name} is already in contacts`);
-   //   }
-   //   this.setState(({ contacts }) => ({
-  //      contacts: [contact, ...contacts],
-  //   }));
- //   };
-
+ 
  addContact = ({name, number}) => {
   const normalizedFilter = name.toLowerCase();
   const checkByName = this.state.contacts.find(contact => contact.name.toLowerCase() === normalizedFilter);
@@ -93,7 +74,6 @@ componentDidUpdate (prevProps, prevState) {
   }
 }
 
-
   render() {
     console.log("App render");
     const { filter } = this.state;
@@ -118,44 +98,5 @@ componentDidUpdate (prevProps, prevState) {
 }
 }
 
-//const schema = yup.object().shape({
-//  login: yup.string().required(),
- //password: yup.string().min(6).max(16).required(),
- // email: yup.string().email(),
- // website: yup.string().url(),
- 
-//});
-//
-
-//addContact = (name)=> {
-  //  console.log('name', name);
-    
-   // const contact = {
-   //     id: nanoid(),
-  //      name    
-  //  };
-    
-   // this.setState(({ contacts }) => ({
-   //   contacts: [contact, ...contacts],
-   // }));
- // };
-
-//<Formik 
-//initialValues={initialValues} 
-//validationSchema={schema}
-//onSubmit={handleSubmit} />
-
-//this.setState(prevState => ({
-   //  contacts: prevState.contacts.map(contact => {
-    //  if (contact.id === contactId) {
-    //     return {
-     //     ...contact,
-    //     completed: !contact.completed,
-    //    };
-    //   }
-
-   //   return contact;
-   // }),
- //  }));
 
  
